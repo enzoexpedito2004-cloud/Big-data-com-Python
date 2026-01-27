@@ -1,0 +1,34 @@
+#importando o pyautogui e dou um apelido de "pa"
+import pyautogui as pa
+import pyperclip
+import time
+#Dando uma pausa de um segundo para ele não sair clicando muito rapido
+pa.PAUSE=1
+#Mandadndo pyautogui arpertar a tecla windows
+pa.press("win")
+#Escrevendo chrome
+pa.write("chrome")
+pa.press("enter")
+#pausa de 3 segundos para gerar o programa
+time.sleep(3)
+pa.write("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox")
+pa.press("enter")
+time.sleep(5)
+pa.click(x=105, y=185)
+time.sleep(5)
+#Escrevendo meu email
+pa.write("enzoexp123@gmail.com")
+pa.press("enter")
+#dois tabs para passar na aba de texto
+pa.press("tab")
+#tema do assunto
+pa.write("oi")
+pa.press("tab")
+texto=f"""Oi Enzo! 
+acompanhe o seu email :)
+"""
+#usei pyperclip e hotkey para não dar problemas de acentuação
+#No texto não tem palavras com acento mas é bom caso queira botar uma palavra com acento
+pyperclip.copy(texto)
+pa.hotkey("ctrl","v")
+pa.click(x=842, y=688)
